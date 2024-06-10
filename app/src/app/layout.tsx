@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Ubuntu } from "next/font/google";
+import { Ubuntu as FontSans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+import Navbar from "@/template/navbar";
+import Footer from "@/template/footer";
+import { cn } from "@/lib/utils";
+import Menu from "@/template/menu";
 
-const ubuntu = Ubuntu({
+/* const ubuntu = Ubuntu({
 	subsets: ["latin"],
 	weight: ["300", "700"],
 	variable: "--font-ubuntu",
+});
+ */
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  weight: ["300", "700"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -21,12 +30,17 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className={`${ubuntu.variable}`}>
-			<body>
-				<Navbar />
-				<main>{children}</main>
-				<Footer />
-			</body>
-		</html>
-	);
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable,
+        )}
+      >
+        <Menu />
+        <main>{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
 }
