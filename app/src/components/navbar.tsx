@@ -23,7 +23,8 @@ export default function Navbar() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-6"
+					  className="size-6 cursor-pointer md:hidden"
+					  
           >
             <path
               strokeLinecap="round"
