@@ -5,16 +5,17 @@ import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import NavLink from "./navLink";
+import { navLinks } from "@/lib/constants";
 
 type MenuProps = {
   toggleMenu: () => void;
 };
 
-const navLinks = [
+/* const navLinks = [
   { label: "products", href: "/" },
   { label: "gallery", href: "/" },
   { label: "contact", href: "/" },
-];
+]; */
 
 export default function Navbar({ toggleMenu }: MenuProps) {
   return (

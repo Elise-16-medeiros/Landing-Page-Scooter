@@ -1,15 +1,7 @@
 import Heading from "@/components/custom/heading";
+import { itemsProducts } from "@/lib/constants";
 import Image from "next/image";
 
-
-const items = [
-  { name: "Lightweight aircraft grade aluminium frame", imageUrl: "/icon.svg" },
-  { name: "Car grade lithium battery", imageUrl: "/icon.svg" },
-  { name: "Self-balanced", imageUrl: "/icon.svg" },
-  { name: "Plug n play", imageUrl: "/icon.svg" },
-  { name: "Quick release adapter", imageUrl: "/icon.svg" },
-  { name: "RFID key card", imageUrl: "/icon.svg" },
-];
 export default function Product() {
   return (
     <section>
@@ -22,7 +14,7 @@ export default function Product() {
         <Image src={"/ProSec.png"} alt="product" width={550} height={300} />
 
         <ul className="flex flex-col items-start gap-y-4">
-          {items.map((item, index) => (
+          {itemsProducts.map((item, index) => (
             <li
               key={index}
               className="flex flex-row items-center justify-center gap-3"
