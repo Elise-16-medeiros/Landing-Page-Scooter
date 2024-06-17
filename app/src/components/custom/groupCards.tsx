@@ -27,7 +27,7 @@ type CardsProps = {
 
 function Cards({ title, subtitle, body }: CardsProps) {
   return (
-    <Card className="w-36 flex flex-col justify-center items-center h-auto shadow-lg">
+    <Card className="w-36 flex flex-col justify-center items-center shadow-lg h-32">
       <CardHeader className="flex flex-row gap-1">
         <CardTitle>{title}</CardTitle>
         <CardDescription className="font-semibold">{subtitle}</CardDescription>
