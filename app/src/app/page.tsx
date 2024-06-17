@@ -1,9 +1,16 @@
-import Image from "next/image";
+import GroupCards from "@/components/custom/groupCards";
+import Hero from "@/template/hero";
+import Motor from "@/template/motor";
+import Product from "@/template/product";
+
 
 export default function Home() {
 	return (
 		<main>
-			<h1 className="text-3xl font-bold">HOME PAGE</h1>
+			<Hero />
+			<GroupCards />
+			<Product />
+			<Motor />
 		</main>
 	);
 }
