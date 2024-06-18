@@ -1,5 +1,6 @@
 import GroupCards from "@/components/custom/groupCards";
 import Accessories from "@/template/accessories";
+import Colors from "@/template/colors";
 import Gallery from "@/template/gallery";
 import Hero from "@/template/hero";
 import Motor from "@/template/motor";
@@ -15,6 +16,7 @@ export default function Home() {
 			<Motor />
 			<Accessories />
 			<Gallery />
+			<Colors />
 		</main>
 	);
 }

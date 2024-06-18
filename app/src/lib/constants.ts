@@ -1,3 +1,4 @@
+
 export const navLinks = [
   { href: "/", key: "home", label: "Products" },
   { href: "/", key: "gallery", label: "Gallery" },
@@ -24,4 +25,12 @@ export const itemsAccessoriesSecond = [
   { name: "Color : Black", imageUrl: "/icon.svg" },
   { name: "Capacity : 45lbs", imageUrl: "/icon.svg" },
   { name: "Ease : Quick & adjustable", imageUrl: "/icon.svg" },
+];
+
+export const images = [
+  { src: "/color5.png", alt: "First" },
+  { src: "/color1.png", alt: "Second" },
+  { src: "/color2.png", alt: "Third" },
+  { src: "/color3.png", alt: "Fourth" },
+  { src: "/color4.png", alt: "Fifth" },
 ];
