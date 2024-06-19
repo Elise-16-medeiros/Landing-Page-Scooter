@@ -11,20 +11,21 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
-import "./styles.module.css";
+
 export default function CarouselColors() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore | null>(null);
 
   return (
     <section className="min-h-screen py-12">
-      <div className="container">
+      <div className="container mx-auto">
         <Swiper
-       /*    style={
+          style={
             {
               "--swiper-navigation-color": "#42454a",
               "--swiper-pagination-color": "#42454a",
             } as React.CSSProperties
-          } */
+          }
+          //slidesPerView={1}
           loop={true}
           spaceBetween={10}
           navigation={true}
@@ -32,8 +33,22 @@ export default function CarouselColors() {
             swiper:
               thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
           }}
+        /*   breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          }} */
           modules={[FreeMode, Navigation, Thumbs]}
-          className="h-96 w-full rounded-lg"
+          className="h-[450px] w-[650px] rounded-lg"
         >
           {images.map((image, index) => (
             <SwiperSlide key={index}>
@@ -43,7 +58,7 @@ export default function CarouselColors() {
                   alt={image.alt}
                   width={350}
                   height={250}
-                  className="block h-full w-full object-cover"
+                  className="block h-full w-full object-scale-down"
                 />
               </div>
             </SwiperSlide>
@@ -67,7 +82,7 @@ export default function CarouselColors() {
                   alt={image.alt}
                   width={150}
                   height={0}
-                  className="block h-full w-full object-cover"
+                  className="block h-full w-full cursor-pointer object-scale-down"
                 />
               </div>
             </SwiperSlide>
