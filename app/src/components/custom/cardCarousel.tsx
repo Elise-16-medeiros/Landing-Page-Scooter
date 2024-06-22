@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, CircleArrowLeft, CircleArrowRight } from "lucide-react";
+import { CircleArrowLeft, CircleArrowRight } from "lucide-react";
 
 const variants = {
   enter: (direction: number) => {
@@ -71,7 +71,7 @@ export default function CardCarousel() {
   };
 
   return (
-    <div className="relative flex h-full w-full items-center justify-center overflow-hidden">
+    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -116,7 +116,7 @@ export default function CardCarousel() {
           </Card>
         </motion.div>
       </AnimatePresence>
-      <div className="absolute inset-x-0 bottom-24 flex items-center justify-center gap-x-8">
+      <div className="absolute inset-x-0 bottom-14 flex items-center justify-center gap-x-8">
         <button className="rounded p-2 text-primary" onClick={() => paginate(-1)}>
           <CircleArrowLeft />
         </button>
