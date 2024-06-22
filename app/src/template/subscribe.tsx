@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 
 export default function Subscribe() {
   return (
-    <section className="h-80 w-full bg-yellow-300">
+    <section className="h-80 w-full">
       <Heading
         title="Subscribe To Newsletter"
         subtitle="Subscribe to our newsletter to get amazing offers in future."

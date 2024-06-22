@@ -1,0 +1,107 @@
+'use client'
+
+
+import Heading from "@/components/custom/heading";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { reviews } from "@/lib/constants";
+import Image from "next/image";
+
+import React, { useRef, useState } from "react";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+
+export default function Testimonials() {
+
+
+  return (
+    <section className="">
+      <Heading title="Testimonials" />
+      <div className="flex h-screen w-full items-center justify-center bg-green-500">
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={10}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          }}
+          modules={[Pagination]}
+          className="w-[350px] h-80 flex flex-row gap-5"
+        >
+          {reviews.map((review, index) => (
+            <SwiperSlide key={index}>
+              <Card className="h-80 w-32">
+                <CardHeader>
+                  <CardTitle>
+                    <Image
+                      src={review.star}
+                      alt="stars"
+                      width={20}
+                      height={10}
+                    />
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>{review.description}</p>
+                </CardContent>
+                <CardFooter>
+                  <Image
+                    src={review.avatar}
+                    alt="avatar"
+                    width={60}
+                    height={60}
+                    className="rounded-full"
+                  />
+                  <span>
+                    <p>{review.name}</p>
+                    <p>{review.profession}</p>
+                  </span>
+                </CardFooter>
+              </Card>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+}
+
+
+type TestimonialsCards = {
+  name: string;
+  image: string;
+  description: string;
+}
+
+function TestimonialsReview({ name, image, description }: TestimonialsCards) {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>
+       
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <p></p>
+      </CardContent>
+      <CardFooter></CardFooter>
+    </Card>
+  );
+}
