@@ -24,7 +24,7 @@ export default function Accessories() {
             ))}
           </ul>
 
-          <div className="flex flex-row overflow-hidden">
+          <div className="flex flex-col overflow-hidden lg:flex-row">
             <Image
               src={"/acce1.png"}
               alt="accessorie one"
@@ -75,10 +75,10 @@ export default function Accessories() {
             </li>
           ))}
         </ul>
-          </div>
-          <div className="flex justify-center items-center my-10">
-          <Button variant={"outline"}>More Accessories Coming Soon</Button>       
-          </div>
+      </div>
+      <div className="my-10 flex items-center justify-center">
+        <Button variant={"outline"}>More Accessories Coming Soon</Button>
+      </div>
     </section>
   );
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="relative h-[265px] w-full bg-[#42454a]">
-      <div className="absolute bottom-0 left-0">
+      <div className="absolute bottom-0 left-0 collapse lg:visible">
         <Image
           src={"/FooterSec.png"}
           alt="image footer"
@@ -12,10 +12,10 @@ export default function Footer() {
           height={0}
         />
       </div>
-      <div className="flex flex-col items-end justify-end gap-y-5 lg:gap-x-24 px-10 py-10 text-gray-300 lg:flex-row">
+      <div className="flex flex-row items-center justify-between gap-5 lg:gap-x-24 px-10 py-10 text-gray-300 lg:flex-row lg:justify-end lg:items-end">
         <ul>
           <li className="flex flex-col items-center gap-y-2">
-            <h1 className="my-2 font-semibold">About</h1>
+            <h1 className="font-semibold">About</h1>
 
             <Link href={"/"}>Company</Link>
             <Link href={"/"}>Teams</Link>
@@ -25,7 +25,7 @@ export default function Footer() {
         </ul>
         <ul>
           <li className="flex flex-col items-center gap-y-2">
-            <h1 className="my-2 font-semibold">Resources</h1>
+            <h1 className="font-semibold">Resources</h1>
 
             <Link href={"/"}>Contact</Link>
             <Link href={"/"}>Application</Link>
@@ -35,7 +35,7 @@ export default function Footer() {
 
         <ul>
           <li className="flex flex-col items-center gap-y-2">
-            <h1 className="my-2 font-semibold">Legals</h1>
+            <h1 className="font-semibold">Legals</h1>
 
             <Link href={"/"}>Copyright Privacy</Link>
             <Link href={"/"}>Policy Disclaimer</Link>

@@ -71,7 +71,7 @@ export default function CardCarousel() {
   };
 
   return (
-    <div className="relative flex h-screen w-full items-center justify-center overflow-hidden">
+    <div className="relative -top-16 flex h-screen w-full items-center justify-center overflow-hidden">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -109,18 +109,28 @@ export default function CardCarousel() {
                 className="h-20 w-20 rounded-full"
               />
               <div className="flex flex-col">
-                <span className="font-semibold text-sm">{cards[cardIndex].name}</span>
-                <span className="text-gray-400 text-xs">{cards[cardIndex].profession}</span>
+                <span className="text-sm font-semibold">
+                  {cards[cardIndex].name}
+                </span>
+                <span className="text-xs text-gray-400">
+                  {cards[cardIndex].profession}
+                </span>
               </div>
             </CardFooter>
           </Card>
         </motion.div>
       </AnimatePresence>
-      <div className="absolute inset-x-0 bottom-14 flex items-center justify-center gap-x-8">
-        <button className="rounded p-2 text-primary" onClick={() => paginate(-1)}>
+      <div className="absolute inset-x-0 bottom-0 top-96 flex items-center justify-center gap-x-8">
+        <button
+          className="rounded p-2 text-primary"
+          onClick={() => paginate(-1)}
+        >
           <CircleArrowLeft />
         </button>
-        <button className="rounded p-2 text-primary" onClick={() => paginate(1)}>
+        <button
+          className="rounded p-2 text-primary"
+          onClick={() => paginate(1)}
+        >
           <CircleArrowRight />
         </button>
       </div>
