@@ -4,12 +4,12 @@ import Image from "next/image";
 
 export default function Gallery() {
   return (
-    <section>
+    <section className="my-16">
       <Heading
         title="Gallery"
         subtitle="View gallery of our products and make yourself satisfied with our creation."
       />
-      <div className="grid grid-cols-1 place-content-between place-items-center gap-y-6 lg:grid-cols-2 my-10">
+      <div className="grid grid-cols-1 place-content-between place-items-center gap-y-6 lg:grid-cols-2 my-16">
         <div className="flex flex-col gap-y-10">
           <Image
             src={"/gallery1.png"}

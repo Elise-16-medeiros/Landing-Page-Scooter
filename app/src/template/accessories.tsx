@@ -5,12 +5,12 @@ import Image from "next/image";
 
 export default function Accessories() {
   return (
-    <section>
+    <section className="my-5">
       <Heading
         title="Multiple Accessories"
         subtitle="There are multiple modes for the scooter for your multiple needs."
       />
-      <div className="my-24">
+      <div className="my-16">
         <div className="flex flex-col items-center justify-around gap-y-16 lg:flex-row">
           <ul className="flex flex-col items-start gap-y-4">
             {itemsAccessoriesFirst.map((item, index) => (

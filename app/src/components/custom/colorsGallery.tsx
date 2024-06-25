@@ -19,9 +19,13 @@ export default function ColorsGallery() {
        setModalIsOpen(false);
        setSelectedImage("");
      };
-    return (
-      <section className="container mx-auto p-4">
-        <div className="grid grid-cols-2 place-content-center place-items-center gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+  return (
+    <>
+      <div className="flex justify-center items-center container mt-10">
+        <Image src={"/color5.png"} alt="white" width={750} height={320} className="rounded-lg"/>
+      </div>
+      <section className="container mx-auto p-4 -mt-6">
+        <div className="grid grid-cols-2 place-content-center place-items-center gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4">
           {images.map((image, index) => (
             <motion.div
               key={index}
@@ -50,5 +54,6 @@ export default function ColorsGallery() {
           )}
         </AnimatePresence>
       </section>
-    );
+    </>
+  );
 }

@@ -8,7 +8,7 @@ import {
 
 export default function GroupCards() {
   return (
-    <div className="grid grid-cols-2 place-content-center place-items-center gap-3 md:grid-cols-3 lg:grid-cols-6">
+    <div className="grid grid-cols-2 place-content-center place-items-center gap-3 md:grid-cols-3 lg:grid-cols-6 mb-20">
       <Cards title="105" subtitle="lbs" body="Net Weight" />
       <Cards title="26" subtitle="mph" body="Top Speed" />
       <Cards title="38" subtitle="miles" body="Max Range" />

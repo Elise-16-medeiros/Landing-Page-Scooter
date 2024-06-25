@@ -28,7 +28,6 @@ export const itemsAccessoriesSecond = [
 ];
 
 export const images = [
-  { src: "/color5.png", alt: "First"},
   { src: "/color1.png", alt: "Second"},
   { src: "/color2.png", alt: "Third"},
   { src: "/color3.png", alt: "Fourth"},

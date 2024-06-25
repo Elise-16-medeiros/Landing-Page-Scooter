@@ -7,10 +7,8 @@ export default function Hero() {
     <section className="mt-10 flex h-screen w-full flex-col items-center justify-center gap-y-10 lg:flex-row lg:justify-between">
       <div className="ml-[40px] flex flex-col">
         <div className="flex flex-col items-start justify-center">
-          <h1 className="font-thin uppercase text-6xl">
-            let's ride
-          </h1>
-          <h1 className="font-semibold uppercase text-6xl">the future.</h1>
+          <h1 className="text-6xl font-thin uppercase">let's ride</h1>
+          <h1 className="text-6xl font-semibold uppercase">the future.</h1>
         </div>
         <div className="mt-16 h-1 w-44 bg-primary" />
         <p className="mt-10">
@@ -22,6 +20,13 @@ export default function Hero() {
             <MoveRight />
           </Button>
           <p>Buy now</p>
+          <Image
+            src={"/icons.svg"}
+            alt="medias"
+            width={100}
+            height={100}
+            className="cursor-pointer"
+          />
         </div>
       </div>
       <div className="flex items-end justify-end pr-0">

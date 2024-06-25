@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="relative h-[265px] w-full bg-[#42454a]">
-      <div className="absolute bottom-0 left-0 collapse lg:visible">
+      <div className="collapse absolute bottom-0 left-0 lg:visible">
         <Image
           src={"/FooterSec.png"}
           alt="image footer"
@@ -12,37 +12,37 @@ export default function Footer() {
           height={0}
         />
       </div>
-      <div className="flex flex-row items-center justify-between gap-5 lg:gap-x-24 px-10 py-10 text-gray-300 lg:flex-row lg:justify-end lg:items-end">
-        <ul>
-          <li className="flex flex-col items-center gap-y-2">
+      <div className="flex flex-row items-center justify-center gap-x-4 px-10 py-10 text-gray-300 lg:flex-row lg:items-end lg:justify-end lg:gap-x-10">
+        <ul className="flex items-center justify-center">
+          <li className="flex flex-col gap-y-2 text-center">
             <h1 className="font-semibold">About</h1>
-
-            <Link href={"/"}>Company</Link>
-            <Link href={"/"}>Teams</Link>
-            <Link href={"/"}>Profile</Link>
-            <Link href={"/"}>Careers</Link>
+            <p className="cursor-pointer hover:text-gray-500">Company</p>
+            <p className="cursor-pointer hover:text-gray-500">Teams</p>
+            <p className="cursor-pointer hover:text-gray-500">Profile</p>
+            <p className="cursor-pointer hover:text-gray-500">Careers</p>
           </li>
         </ul>
-        <ul>
-          <li className="flex flex-col items-center gap-y-2">
+        <ul className="flex items-center justify-center">
+          <li className="flex flex-col gap-y-2 text-center">
             <h1 className="font-semibold">Resources</h1>
 
-            <Link href={"/"}>Contact</Link>
-            <Link href={"/"}>Application</Link>
-            <Link href={"/"}>FQA Features</Link>
+            <p className="cursor-pointer hover:text-gray-500">Contact</p>
+            <p className="cursor-pointer hover:text-gray-500">Application</p>
+            <p className="cursor-pointer hover:text-gray-500">FQA Features</p>
           </li>
         </ul>
 
-        <ul>
-          <li className="flex flex-col items-center gap-y-2">
+        <ul className="flex items-center justify-center">
+          <li className="flex flex-col gap-y-2 text-center">
             <h1 className="font-semibold">Legals</h1>
 
-            <Link href={"/"}>Copyright Privacy</Link>
-            <Link href={"/"}>Policy Disclaimer</Link>
-            <Link href={"/"}>Terms</Link>
-            <Link href={"/"}>
-              <Image src={"/icons.svg"} alt="icons" width={70} height={40} />
-            </Link>
+            <p className="cursor-pointer hover:text-gray-500">
+              Copyright Privacy
+            </p>
+            <p className="cursor-pointer hover:text-gray-500">
+              Policy Disclaimer
+            </p>
+            <p className="cursor-pointer hover:text-gray-500">Terms</p>
           </li>
         </ul>
       </div>
@@ -52,3 +52,4 @@ export default function Footer() {
     </footer>
   );
 }
+

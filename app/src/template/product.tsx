@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Product() {
   return (
-    <section>
+    <section className="my-16">
       <Heading
         title="Product Information"
         subtitle="Our Scooter has following unique design and technology features:"
@@ -13,7 +13,7 @@ export default function Product() {
       <div className="grid grid-cols-1 place-content-between place-items-center lg:grid-cols-2">
         <Image src={"/ProSec.png"} alt="product" width={550} height={300} />
 
-        <ul className="flex flex-col items-start gap-y-4">
+        <ul className="flex flex-col items-start gap-y-4 ml-8">
           {itemsProducts.map((item, index) => (
             <li
               key={index}

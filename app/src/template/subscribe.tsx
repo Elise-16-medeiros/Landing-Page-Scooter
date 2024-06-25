@@ -4,14 +4,14 @@ import { Input } from "@/components/ui/input";
 
 export default function Subscribe() {
   return (
-    <section className="h-80 w-full">
+    <section className="h-80 w-full mb-6">
       <Heading
         title="Subscribe To Newsletter"
         subtitle="Subscribe to our newsletter to get amazing offers in future."
       />
-      <div className="flex justify-center items-center py-16">
-        <div className="flex w-full max-w-sm items-center space-x-2">
-          <Input type="email" placeholder="Enter your email" />
+      <div className="flex justify-center items-center py-11">
+        <div className="flex flex-col gap-y-4 w-full max-w-sm items-center space-x-4">
+          <Input type="email" placeholder="Enter your email" className="w-80" />
           <Button type="submit">Get start</Button>
         </div>
       </div>
@@ -19,5 +19,3 @@ export default function Subscribe() {
   );
 }
 
-/* import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"; */
