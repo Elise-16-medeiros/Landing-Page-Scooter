@@ -59,7 +59,7 @@ export default function MainNavbar() {
                 <li key={path}>
                   <Link
                     className={`p-4 text-center uppercase ${
-                      pathname === path ? "text-primary" : ""
+                      pathname === path ? "text-primary" : "text-primary"
                     } hover:text-gray-400 focus-visible:text-gray-400`}
                     href={path}
                   >
@@ -73,9 +73,16 @@ export default function MainNavbar() {
       </div>
       <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-x-3">
         {user && isAuthenticated && (
-          <div className="flex flex-row gap-x-4 text-primary">
+          <div className="flex flex-row gap-x-4 text-primary items-baseline">
             {user?.given_name}
-            <LogoutLink>Log out</LogoutLink>
+            <LogoutLink
+              className={buttonVariants({
+                size: "sm",
+                className: "bg-[#484b51]",
+              })}
+            >
+              Log out
+            </LogoutLink>
           </div>
         )}
         {!isAuthenticated && (
@@ -84,7 +91,7 @@ export default function MainNavbar() {
               className={buttonVariants({
                 size: "sm",
                 variant: "outline",
-                className:"text-primary"
+                className: "text-primary",
               })}
             >
               Login
@@ -133,7 +140,7 @@ export default function MainNavbar() {
                     <li key={path}>
                       <Link
                         className={`p-4 text-center uppercase ${
-                          pathname === path ? "text-primary" : ""
+                          pathname === path ? "text-primary" : "text-primary"
                         } hover:text-gray-400 focus-visible:text-gray-400`}
                         href={path}
                       >
@@ -149,7 +156,14 @@ export default function MainNavbar() {
                 <div className="flex w-full flex-row items-center justify-center gap-x-4">
                   {user && isAuthenticated && (
                     <Button>
-                      <LogoutLink>Log out</LogoutLink>
+                      <LogoutLink
+                        className={buttonVariants({
+                          size: "sm",
+                          className: "bg-[#484b51]",
+                        })}
+                      >
+                        Log out
+                      </LogoutLink>
                     </Button>
                   )}
 
