@@ -5,18 +5,19 @@ import {
   LogoutLink,
   RegisterLink,
 } from "@kinde-oss/kinde-auth-nextjs/components";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 
 import { Menu, User } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 const mainRoutes = [
-  { path: "/", name: "Home" },
-  { path: "/", name: "Gallery" },
   { path: "/", name: "Product" },
+  { path: "/", name: "Gallery" },
+  { path: "/", name: "Contact" },
   {
     path: "/dashboard",
     name: "Dashboard",
@@ -41,8 +42,12 @@ export default function MainNavbar() {
   const { permissions } = getPermissions();
 
   return (
-    <nav className="flex h-10 w-full items-center justify-between bg-primary px-4 text-primary-foreground">
-      <h1 className="3xl font-bold uppercase">Logo</h1>
+    <nav className="flex items-center justify-between border border-b-zinc-200 px-8 py-3 text-primary-foreground">
+      <div>
+        <Link href="/">
+          <Image src="/logo.png" alt="logo" width={40} height={30} />
+        </Link>
+      </div>
       <div className="hidden lg:flex lg:items-center lg:justify-center lg:space-x-10">
         <ul className="flex flex-row items-center justify-center">
           {mainRoutes.map(({ path, name, requiredPermissions }) => {
@@ -53,9 +58,9 @@ export default function MainNavbar() {
               return (
                 <li key={path}>
                   <Link
-                    className={`p-4 text-center ${
-                      pathname === path ? "text-secondary" : ""
-                    } hover:bg-secondary hover:text-secondary-foreground focus-visible:bg-secondary focus-visible:text-secondary-foreground`}
+                    className={`p-4 text-center uppercase ${
+                      pathname === path ? "text-primary" : ""
+                    } hover:text-gray-400 focus-visible:text-gray-400`}
                     href={path}
                   >
                     {name}
@@ -65,22 +70,37 @@ export default function MainNavbar() {
             }
           })}
         </ul>
-        <div className="flex w-full items-center justify-end gap-x-3">
-          {user && isAuthenticated && (
-            <div className="flex flex-row gap-x-4">
-              {user?.given_name}
-              <LogoutLink>Log out</LogoutLink>
-            </div>
-          )}
-          {!isAuthenticated && (
-            <div className="flex flex-row gap-x-2">
-              <LoginLink className="w-20 text-center">Login</LoginLink>
-              <RegisterLink className="w-20 text-center">Sign up</RegisterLink>
-            </div>
-          )}
-        </div>
       </div>
-      <div className="lg:hidden">
+      <div className="hidden lg:flex lg:items-center lg:justify-end lg:gap-x-3">
+        {user && isAuthenticated && (
+          <div className="flex flex-row gap-x-4 text-primary">
+            {user?.given_name}
+            <LogoutLink>Log out</LogoutLink>
+          </div>
+        )}
+        {!isAuthenticated && (
+          <div className="flex flex-row gap-x-5">
+            <LoginLink
+              className={buttonVariants({
+                size: "sm",
+                variant: "outline",
+                className:"text-primary"
+              })}
+            >
+              Login
+            </LoginLink>
+            <RegisterLink
+              className={buttonVariants({
+                size: "sm",
+                className: "bg-[#484b51]",
+              })}
+            >
+              Sign up
+            </RegisterLink>
+          </div>
+        )}
+      </div>
+      <div className="text-primary lg:hidden">
         <Sheet>
           <SheetTrigger>
             <Menu />
@@ -112,9 +132,9 @@ export default function MainNavbar() {
                   return (
                     <li key={path}>
                       <Link
-                        className={`p-4 text-center ${
+                        className={`p-4 text-center uppercase ${
                           pathname === path ? "text-primary" : ""
-                        } hover:bg-secondary hover:text-secondary-foreground focus-visible:bg-secondary focus-visible:text-secondary-foreground`}
+                        } hover:text-gray-400 focus-visible:text-gray-400`}
                         href={path}
                       >
                         {name}
@@ -134,13 +154,13 @@ export default function MainNavbar() {
                   )}
 
                   {!user && !isAuthenticated && (
-                    <Button>
+                    <Button variant={"outline"} size={"sm"}>
                       <LoginLink>Login</LoginLink>
                     </Button>
                   )}
 
                   {!user && !isAuthenticated && (
-                    <Button>
+                    <Button size={"sm"} className="bg-[#484b51]">
                       <RegisterLink>Sign up</RegisterLink>
                     </Button>
                   )}

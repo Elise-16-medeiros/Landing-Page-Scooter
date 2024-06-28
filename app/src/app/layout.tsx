@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Ubuntu as FontSans } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/template/navbar";
+
 import Footer from "@/template/footer";
 import { cn } from "@/lib/utils";
-import Menu from "@/template/menu";
+import MainNavbar from "@/template/mainNavbar";
+
 
 /* const ubuntu = Ubuntu({
 	subsets: ["latin"],
@@ -37,7 +38,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Menu />
+        <MainNavbar />
         <main>{children}</main>
         <Footer />
       </body>
