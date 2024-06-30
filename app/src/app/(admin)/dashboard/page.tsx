@@ -16,6 +16,7 @@ export default async function AdminPage() {
 	return (
 		<main className="flex w-full h-screen flex-col items-center justify-center gap-y-6">
 			<h1 className="text-3xl font-bold">AdminPage</h1>
+
 		</main>
 	);
 }
