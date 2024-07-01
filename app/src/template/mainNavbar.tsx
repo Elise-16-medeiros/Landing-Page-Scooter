@@ -58,8 +58,8 @@ export default function MainNavbar() {
               return (
                 <li key={path}>
                   <Link
-                    className={`p-4 text-center uppercase ${
-                      pathname === path ? "text-primary" : "text-primary"
+                    className={`p-4 text-center uppercase text-primary ${
+                      pathname === path && "text-primary"
                     } hover:text-gray-400 focus-visible:text-gray-400`}
                     href={path}
                   >
@@ -139,8 +139,8 @@ export default function MainNavbar() {
                   return (
                     <li key={path}>
                       <Link
-                        className={`p-4 text-center uppercase ${
-                          pathname === path ? "text-primary" : "text-primary"
+                        className={`p-4 text-center uppercase text-primary ${
+                          pathname === path && "text-primary"
                         } hover:text-gray-400 focus-visible:text-gray-400`}
                         href={path}
                       >

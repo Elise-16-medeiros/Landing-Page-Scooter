@@ -29,23 +29,24 @@ enum ProductColor {
 }
 
 model Product {
-  id          String        @id @default(cuid())
-  name        String
-  imageUrl    String
-  color       ProductColor?
-  price       Decimal
-  description String
-  Order       Order[]
-  Favorite  Favorite[]
+  id                     String        @id @default(cuid())
+  name                   String
+  imageUrl               String
+  color                  ProductColor?
+  amount                 Float
+  description            String
+  isAvailableForPurchase Boolean       @default(true)
 
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
- 
+  Order    Order[]
+  Favorite Favorite[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model User {
   id       String     @id @default(cuid())
-  email    String
+  email    String     @unique
   Order    Order[]
   Favorite Favorite[]
 
